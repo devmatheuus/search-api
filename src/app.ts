@@ -3,6 +3,7 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import { appRoutes } from './routes/index.routes';
+import { errorMiddleware } from './middlewares/error.middleware';
 
 const app: Express = express();
 
@@ -16,5 +17,6 @@ app.use(express.json());
 app.use(limiter);
 app.use(cors());
 appRoutes(app);
+app.use(errorMiddleware);
 
 export default app;
