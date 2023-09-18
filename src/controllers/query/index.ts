@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { queryService } from '../../services/query';
 
 export const queryController = async (req: Request, res: Response) => {
-  const { num_processo } = req.body;
+  const { process_number } = req.body;
 
   const {
     processes,
@@ -12,7 +12,7 @@ export const queryController = async (req: Request, res: Response) => {
     stayedProcesses,
     ownershipProcesses,
     viennaProcesses,
-  } = await queryService(num_processo);
+  } = await queryService(process_number);
 
   return res.status(200).json({
     processos: processes,
