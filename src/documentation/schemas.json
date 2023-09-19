@@ -1,0 +1,176 @@
+{
+  "GroupedProcesses": {
+    "type": "object",
+    "properties": {
+      "processos": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "num_processo": { "type": "string" },
+            "dt_deposito": { "type": "string", "format": "date-time" },
+            "cnpj_cpf": { "type": "string" },
+            "marca": { "type": "string" },
+            "natureza": { "type": "string" },
+            "apresentacao": { "type": "string" },
+            "procurador": { "type": "string" },
+            "dt_vigencia": { "type": "string", "format": "date-time" },
+            "dt_concessao": { "type": "string", "format": "date-time" },
+            "dt_prorrogacao": { "type": "string" },
+            "apostila": { "type": "string" },
+            "prioridade_num": { "type": "string" },
+            "prioridade_data": { "type": "string", "format": "date-time" },
+            "prioridade_pais": { "type": "string" },
+            "arquivo": { "type": "string" }
+          },
+          "required": [
+            "num_processo",
+            "dt_deposito",
+            "marca",
+            "natureza",
+            "apresentacao",
+            "procurador",
+            "dt_vigencia",
+            "dt_concessao",
+            "arquivo"
+          ]
+        }
+      },
+      "processos_classes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id_classe": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "classe": { "type": "integer" },
+            "especificacao": { "type": "string" },
+            "ncl": { "type": "integer" },
+            "status": { "type": "string" },
+            "traducao_especificacao": { "type": "string" }
+          },
+          "required": ["id_classe", "num_processo", "classe", "especificacao"]
+        }
+      },
+
+      "processos_despacho": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id_despacho": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "num_despacho": { "type": "string" },
+            "rpi": { "type": "string" },
+            "dt_rpi": { "type": "string", "format": "date-time" },
+            "desc_despacho": { "type": "string" }
+          },
+          "required": [
+            "id_despacho",
+            "num_processo",
+            "num_despacho",
+            "rpi",
+            "dt_rpi",
+            "desc_despacho"
+          ]
+        }
+      },
+
+      "processos_protocolos": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "idprocessos_protocolos": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "num_protocolo": { "type": "string" },
+            "data_protocolo": { "type": "string", "format": "date-time" },
+            "cod_servico": { "type": "string" },
+            "requerente": { "type": "string" },
+            "requerente_pais": { "type": "string" },
+            "requerente_uf": { "type": "string" },
+            "procurador": { "type": "string" },
+            "num_despacho": { "type": "string" },
+            "cessionario": { "type": "string" }
+          },
+          "required": [
+            "idprocessos_protocolos",
+            "num_processo",
+            "num_protocolo",
+            "data_protocolo",
+            "cod_servico",
+            "requerente",
+            "requerente_pais",
+            "requerente_uf",
+            "procurador",
+            "num_despacho"
+          ]
+        }
+      },
+
+      "processos_sobrestadores": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id_processos_sobrestadores": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "marca_sobrestador": { "type": "string" },
+            "processo_sobrestador": { "type": "string" }
+          },
+          "required": [
+            "id_processos_sobrestadores",
+            "num_processo",
+            "marca_sobrestador",
+            "processo_sobrestador"
+          ]
+        }
+      },
+      "processos_titulares": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "idprocessos_titulares": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "titular": { "type": "string" },
+            "pais": { "type": "string" },
+            "uf": { "type": "string" }
+          },
+          "required": [
+            "idprocessos_titulares",
+            "num_processo",
+            "titular",
+            "pais",
+            "uf"
+          ]
+        }
+      },
+
+      "processos_vienna": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "idprocessos_vienna": { "type": "integer" },
+            "num_processo": { "type": "string" },
+            "codigo": { "type": "string" },
+            "edicao": { "type": "string" }
+          },
+          "required": ["idprocessos_vienna", "num_processo", "codigo"]
+        }
+      }
+    }
+  },
+
+  "QueryError": {
+    "type": "object",
+    "properties": {
+      "code": { "type": "integer" },
+      "message": {
+        "type": "string",
+        "example": "The 'process_number' parameter is mandatory"
+      }
+    }
+  }
+}
