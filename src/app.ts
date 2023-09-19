@@ -9,6 +9,7 @@ import { swaggerOptions } from './documentation/swagger-settings';
 import swaggerUi from 'swagger-ui-express';
 
 const app: Express = express();
+app.set('trust proxy', true);
 
 // Protection setting
 const limiter = rateLimit({
