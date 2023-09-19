@@ -17,5 +17,5 @@ export const swaggerOptions = {
       schemas: schemaData,
     },
   },
-  apis: [path.join(__dirname, '../routes/query/query.routes.ts')],
+  apis: [path.join(__dirname, '../routes/query/query.routes.js')],
 };
