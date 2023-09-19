@@ -7,8 +7,7 @@ export const AppDataSource = new DataSource(
         type: 'sqlite',
         database: ':memory:',
         synchronize: true,
-        entities: ['entities/*.js'],
-        migrations: ['migrations/*.js'],
+        entities: ['dist/entities/*.entity.js'],
       }
     : {
         type: 'mysql',
@@ -19,7 +18,6 @@ export const AppDataSource = new DataSource(
         database: process.env.DB_DATABASE,
         synchronize: false,
         logging: true,
-        entities: ['entities/*.js'],
-        migrations: ['migrations/*.js'],
+        entities: ['dist/entities/*.entity.js'],
       }
 );
