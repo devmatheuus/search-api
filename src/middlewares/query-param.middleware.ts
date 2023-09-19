@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../errors/AppError';
 
-export const bodyParamMiddleware = (
+export const queryParamMiddleware = (
   request: Request,
   response: Response,
   next: NextFunction
 ) => {
-  const processNumber = request.body?.process_number;
+  const processNumber = request.query?.process_number;
 
   if (!processNumber) {
     throw new AppError(400, 'The "process_number" parameter is mandatory');
